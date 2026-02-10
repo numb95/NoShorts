@@ -8,7 +8,7 @@
     "test": "npm run test:unit",
     "test:unit": "jest",
     "test:smoke": "playwright test",
-    "playwright:install": "playwright install",
+    "playwright:install": "playwright install chromium",
     "version:dev": "node scripts/version.mjs",
     "version:release": "node scripts/version.mjs --release",
     "test:firefox": "web-ext lint --source-dir .",

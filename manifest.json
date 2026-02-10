@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
   "name": "NoShorts",
-  "version": "0.0.0-dev",
+  "version": "0.0.0",
   "description": "Remove YouTube Shorts elements everywhere on YouTube.",
   "permissions": ["storage"],
   "browser_specific_settings": {
     "gecko": {
       "id": "@noshorts",
-      "strict_min_version": "58.0"
+      "strict_min_version": "109.0",
+      "data_collection_permissions": []
     }
   },
   "data_collection_permissions": [],
