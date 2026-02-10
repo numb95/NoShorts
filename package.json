@@ -11,6 +11,7 @@
     "playwright:install": "playwright install chromium",
     "version:dev": "node scripts/version.mjs",
     "version:release": "node scripts/version.mjs --release",
+    "version:lint": "node scripts/version.mjs --lint",
     "test:firefox": "web-ext lint --source-dir .",
     "firefox:run": "web-ext run -t firefox-desktop --source-dir ."
   },

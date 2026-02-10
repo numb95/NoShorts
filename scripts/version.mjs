@@ -41,13 +41,17 @@ const getShortSha = () => {
 };
 
 const isRelease = process.argv.includes("--release");
+const isLint = process.argv.includes("--lint");
 
 const tagVersion = getTagVersion();
 const shortSha = getShortSha();
 
-const version = isRelease && tagVersion
-  ? tagVersion
-  : `0.0.0-dev+${shortSha}`;
+let version = `0.0.0-dev+${shortSha}`;
+if (isRelease && tagVersion) {
+  version = tagVersion;
+} else if (isLint) {
+  version = "0.0.0";
+}
 
 const manifest = readManifest();
 manifest.version = version;

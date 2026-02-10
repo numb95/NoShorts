@@ -8,10 +8,11 @@
     "gecko": {
       "id": "@noshorts",
       "strict_min_version": "109.0",
-      "data_collection_permissions": []
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
-  "data_collection_permissions": [],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
