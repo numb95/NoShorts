@@ -1,6 +1,37 @@
 # NoShorts
 
+<p align="center">
+  <img src="icons/icon128.png" alt="NoShorts icon" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/numb95/NoShort/actions/workflows/tests.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/numb95/noshorts/tests.yml?style=for-the-badge" alt="tests" />
+  </a>
+  <a href="https://github.com/numb95/NoShort/releases">
+    <img src="https://img.shields.io/github/v/release/numb95/noshorts?style=for-the-badge" alt="release" />
+  </a>
+  <img src="https://img.shields.io/github/downloads/numb95/noshorts/total?style=for-the-badge" alt="downloads" />
+  <img src="https://img.shields.io/github/last-commit/numb95/noshorts?style=for-the-badge" alt="last commit" />
+  <img src="https://img.shields.io/github/release-date/numb95/noshorts?style=for-the-badge" alt="release date" />
+  <img src="https://img.shields.io/github/license/numb95/noshorts?style=for-the-badge" alt="license" />
+</p>
+
 NoShorts removes YouTube Shorts elements across YouTube, including shelves, tiles, tabs, search filters, and Shorts player pages. Customize what gets removed from the extension popup.
+
+## Table of Contents
+- [About](#about)
+- [How It Works](#how-it-works)
+- [Install](#install)
+- [Usage](#usage)
+- [Privacy](#privacy)
+- [Store Description (Short)](#store-description-short)
+- [Store Description (Long)](#store-description-long)
+- [Bug Reports](#bug-reports)
+- [Contributing](#contributing)
+- [Build](#build)
+- [Makefile](#makefile)
+- [Notes](#notes)
 
 ## About
 NoShorts is a lightweight, configurable browser extension that hides YouTube Shorts so you can focus on regular videos. It works on the YouTube homepage, search results, channels, and Shorts player pages.
