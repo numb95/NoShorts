@@ -15,10 +15,14 @@ test-smoke: playwright-install
 	npm run test:smoke
 
 playwright-install:
-	npm run playwright:install
+	@if [ "$$CI" = "true" ]; then \
+		npx playwright install --with-deps chromium; \
+	else \
+		npx playwright install chromium; \
+	fi
 
-test-firefox:
-	npm run test:firefox
+test-firefox: package-dir
+	npx web-ext lint --source-dir $(DIST_DIR)/package
 
 firefox-run:
 	npm run firefox:run
