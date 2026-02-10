@@ -1,7 +1,7 @@
 EXT_NAME := noshorts
 DIST_DIR := dist
 
-.PHONY: install test test-unit test-smoke test-firefox firefox-run build build-release build-release-chrome firefox-unsigned firefox-signed clean playwright-install release-version lint-version package-dir
+.PHONY: install test test-unit test-smoke test-firefox firefox-run build build-release build-release-chrome firefox-unsigned firefox-signed clean playwright-install release-version lint-version dev-version package-dir
 
 install:
 	npm install
@@ -33,38 +33,24 @@ test-firefox: lint-version package-dir
 firefox-run:
 	npm run firefox:run
 
-build:
-	node scripts/version.mjs
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
-	mkdir -p $(DIST_DIR); \
-	zip -r $(DIST_DIR)/$(EXT_NAME)-$$version.zip \
-		dist/manifest.json \
-		content.js \
-		icons \
-		popup.html \
-		popup.css \
-		popup.js \
-		README.md
+build: dev-version package-dir
+	@version=$$(node -e "const m=require('./dist/manifest.json'); console.log(m.version_name || m.version)"); \
+	cd $(DIST_DIR)/package && zip -r ../$(EXT_NAME)-$$version.zip .
 
 build-release: release-version build-release-chrome firefox-unsigned firefox-signed
 
-build-release-chrome: release-version
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
-	mkdir -p $(DIST_DIR); \
-	zip -r $(DIST_DIR)/$(EXT_NAME)-$$version-chrome.zip \
-		dist/manifest.json \
-		content.js \
-		icons \
-		popup.html \
-		popup.css \
-		popup.js \
-		README.md
+build-release-chrome: release-version package-dir
+	@version=$$(node -e "const m=require('./dist/manifest.json'); console.log(m.version_name || m.version)"); \
+	cd $(DIST_DIR)/package && zip -r ../$(EXT_NAME)-$$version-chrome.zip .
 
 release-version:
 	node scripts/version.mjs --release
 
 lint-version:
 	node scripts/version.mjs --lint
+
+dev-version:
+	node scripts/version.mjs
 
 package-dir:
 	rm -rf $(DIST_DIR)/package
@@ -78,11 +64,11 @@ package-dir:
 	cp -R icons $(DIST_DIR)/package/icons
 
 firefox-unsigned: release-version package-dir
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
+	@version=$$(node -e "const m=require('./dist/manifest.json'); console.log(m.version_name || m.version)"); \
 	npx web-ext build --source-dir $(DIST_DIR)/package --artifacts-dir $(DIST_DIR) --overwrite-dest --filename $(EXT_NAME)-$$version-firefox-unsigned.xpi
 
 firefox-signed: release-version package-dir
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
+	@version=$$(node -e "const m=require('./dist/manifest.json'); console.log(m.version_name || m.version)"); \
 	npx web-ext sign --source-dir $(DIST_DIR)/package --artifacts-dir $(DIST_DIR) --channel listed --filename $(EXT_NAME)-$$version-firefox-signed.xpi
 
 clean:
