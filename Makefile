@@ -35,8 +35,8 @@ firefox-run:
 
 build:
 	node scripts/version.mjs
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)") ; \
-	mkdir -p $(DIST_DIR)
+	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
+	mkdir -p $(DIST_DIR); \
 	zip -r $(DIST_DIR)/$(EXT_NAME)-$$version.zip \
 		dist/manifest.json \
 		content.js \
@@ -49,8 +49,8 @@ build:
 build-release: release-version build-release-chrome firefox-unsigned firefox-signed
 
 build-release-chrome: release-version
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)") ; \
-	mkdir -p $(DIST_DIR)
+	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
+	mkdir -p $(DIST_DIR); \
 	zip -r $(DIST_DIR)/$(EXT_NAME)-$$version-chrome.zip \
 		dist/manifest.json \
 		content.js \
@@ -78,11 +78,11 @@ package-dir:
 	cp -R icons $(DIST_DIR)/package/icons
 
 firefox-unsigned: release-version package-dir
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)") ; \
+	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
 	npx web-ext build --source-dir $(DIST_DIR)/package --artifacts-dir $(DIST_DIR) --overwrite-dest --filename $(EXT_NAME)-$$version-firefox-unsigned.xpi
 
 firefox-signed: release-version package-dir
-	@version=$$(node -e "console.log(require('./dist/manifest.json').version)") ; \
+	@version=$$(node -e "console.log(require('./dist/manifest.json').version)"); \
 	npx web-ext sign --source-dir $(DIST_DIR)/package --artifacts-dir $(DIST_DIR) --channel listed --filename $(EXT_NAME)-$$version-firefox-signed.xpi
 
 clean:
