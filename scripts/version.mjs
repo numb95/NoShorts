@@ -46,15 +46,24 @@ const isLint = process.argv.includes("--lint");
 const tagVersion = getTagVersion();
 const shortSha = getShortSha();
 
-let version = `0.0.0-dev+${shortSha}`;
+let version = "0.0.0";
+let versionName = `0.0.0-dev+${shortSha}`;
+
 if (isRelease && tagVersion) {
   version = tagVersion;
+  versionName = null;
 } else if (isLint) {
   version = "0.0.0";
+  versionName = null;
 }
 
 const manifest = readManifest();
 manifest.version = version;
+if (versionName) {
+  manifest.version_name = versionName;
+} else {
+  delete manifest.version_name;
+}
 
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(outManifestPath, JSON.stringify(manifest, null, 2) + "\n");

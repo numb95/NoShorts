@@ -9,3 +9,4 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 web-ext-artifacts/
+.DS_Store
