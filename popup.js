@@ -50,4 +50,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       writeSetting(key, el.checked);
     });
   });
+
+  const versionEl = document.getElementById("version");
+  if (versionEl) {
+    const runtime = typeof chrome !== "undefined" ? chrome.runtime : browser?.runtime;
+    const manifest = runtime?.getManifest?.();
+    const version = manifest?.version_name || manifest?.version || "unknown";
+    versionEl.textContent = version;
+  }
 });

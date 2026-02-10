@@ -184,6 +184,11 @@ body {
   margin: 4px 0;
 }
 
+.meta-version {
+  font-weight: 600;
+  color: #3e3647;
+}
+
 .meta-section {
   margin-top: 6px;
 }
