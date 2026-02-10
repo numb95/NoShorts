@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>NoShorts</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="badge">NoShorts</div>
+        <h1>Keep YouTube focused.</h1>
+        <p>Strip Shorts from the places you choose. Changes apply immediately.</p>
+        <div class="hero-glow" aria-hidden="true"></div>
+      </header>
+      <main class="panel">
+        <div class="panel-title">Filters</div>
+        <label class="toggle">
+          <input type="checkbox" id="shelves" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Home shelves and carousels</span>
+            <span class="subtitle">Remove Shorts rows on the homepage.</span>
+          </span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="links" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Shorts tiles and links</span>
+            <span class="subtitle">Hide Shorts video cards in feeds.</span>
+          </span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="tabs" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Tabs and sidebar entry</span>
+            <span class="subtitle">Remove Shorts tabs in navigation.</span>
+          </span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="searchFilters" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Search filter chip</span>
+            <span class="subtitle">Hide the Shorts button on results.</span>
+          </span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="channelShorts" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Channel Shorts tab</span>
+            <span class="subtitle">Remove Shorts from channel pages.</span>
+          </span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="players" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span class="toggle-text">
+            <span class="title">Shorts player pages</span>
+            <span class="subtitle">Skip the Shorts viewer entirely.</span>
+          </span>
+        </label>
+      </main>
+      <footer class="meta">
+        <div class="meta-title">Credits & info</div>
+        <p>Created by numb95.</p>
+        <p>
+          GitHub:
+          <a href="https://github.com/numb95/NoShort" target="_blank" rel="noreferrer">github.com/numb95/NoShort</a>
+        </p>
+        <p>
+          Report a bug:
+          <a href="https://github.com/numb95/NoShort/issues" target="_blank" rel="noreferrer">github.com/numb95/NoShort/issues</a>
+        </p>
+        <div class="meta-section">
+          <div class="meta-label">Legal</div>
+          <ul class="meta-list">
+            <li>License: MIT</li>
+            <li>This product ships as-is, WITHOUT WARRANTY OF ANY KIND.</li>
+            <li>Everything works locally in your browser; nothing is sent to external servers of the author.</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

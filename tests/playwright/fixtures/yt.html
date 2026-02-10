@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>YouTube</title>
+  </head>
+  <body>
+    <ytd-rich-shelf-renderer aria-label="Shorts">
+      <div id="title">Shorts</div>
+    </ytd-rich-shelf-renderer>
+
+    <ytd-video-renderer id="shorts-item">
+      <a href="/shorts/abc">Shorts Link</a>
+    </ytd-video-renderer>
+
+    <ytd-video-renderer id="keep-item">
+      <a href="/watch?v=123">Watch</a>
+    </ytd-video-renderer>
+
+    <ytd-guide-entry-renderer id="guide-shorts">
+      <a href="/shorts" title="Shorts">Shorts</a>
+    </ytd-guide-entry-renderer>
+
+    <tp-yt-paper-tab id="tab-shorts">
+      <a href="/shorts">Shorts</a>
+    </tp-yt-paper-tab>
+
+    <ytd-shorts id="shorts-player"></ytd-shorts>
+
+    <ytd-search-sub-menu-renderer id="search-filters">
+      <ytd-chip-cloud-chip-renderer id="chip-shorts" aria-label="Shorts">Shorts</ytd-chip-cloud-chip-renderer>
+      <ytd-chip-cloud-chip-renderer id="chip-keep">All</ytd-chip-cloud-chip-renderer>
+    </ytd-search-sub-menu-renderer>
+
+    <ytd-channel-sub-menu-renderer id="channel-tabs">
+      <tp-yt-paper-tab id="channel-shorts">
+        <a href="/@tester/shorts">Shorts</a>
+      </tp-yt-paper-tab>
+      <tp-yt-paper-tab id="channel-videos">
+        <a href="/@tester/videos">Videos</a>
+      </tp-yt-paper-tab>
+    </ytd-channel-sub-menu-renderer>
+
+    <ytd-video-renderer id="keep-nonshorts">
+      <a href="/watch?v=999">Normal Video</a>
+    </ytd-video-renderer>
+  </body>
+</html>

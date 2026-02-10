@@ -1,0 +1,54 @@
+name: tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: make install
+      - name: Test
+        run: make test-unit
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: make install
+      - name: Install Playwright Browsers
+        run: make playwright-install
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+      - name: Smoke Tests (Chromium)
+        run: xvfb-run -a make test-smoke
+  firefox:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: make install
+      - name: Firefox Lint (web-ext)
+        run: make test-firefox

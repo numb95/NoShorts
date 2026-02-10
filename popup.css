@@ -1,0 +1,215 @@
+:root {
+  color-scheme: light;
+  --ink: #121116;
+  --muted: #5b5763;
+  --panel: #ffffff;
+  --shadow: rgba(14, 12, 20, 0.12);
+  --accent: #ff5c3b;
+  --accent-deep: #ff2f68;
+  --accent-soft: rgba(255, 92, 59, 0.15);
+  --border: rgba(17, 16, 22, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", Tahoma, sans-serif;
+  width: 320px;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff1e9, #f6f5fb 45%, #f1f1f9 100%);
+}
+
+.app {
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.hero {
+  position: relative;
+  padding: 16px 16px 14px;
+  border-radius: 16px;
+  background: linear-gradient(140deg, #1a1325, #241a2e 55%, #2a0f2c);
+  color: #f8f2ff;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(21, 12, 33, 0.35);
+}
+
+.hero h1 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(248, 242, 255, 0.78);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-glow {
+  position: absolute;
+  right: -40px;
+  top: -30px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(255, 92, 59, 0.5), rgba(255, 92, 59, 0));
+  filter: blur(2px);
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 10px 26px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: border 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  background: #faf9ff;
+}
+
+.toggle:hover {
+  border-color: rgba(255, 92, 59, 0.25);
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle-ui {
+  width: 38px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(30, 24, 40, 0.2);
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  transition: background 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(30, 24, 40, 0.2);
+}
+
+.toggle-ui::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.toggle input:checked + .toggle-ui {
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  box-shadow: 0 8px 18px rgba(255, 92, 59, 0.35);
+}
+
+.toggle input:checked + .toggle-ui::after {
+  transform: translateX(16px);
+  background: #fff7f4;
+}
+
+.toggle-text .title {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.toggle-text .subtitle {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.meta {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.meta-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 9px;
+  color: #342f3e;
+  margin-bottom: 6px;
+}
+
+.meta p {
+  margin: 4px 0;
+}
+
+.meta-section {
+  margin-top: 6px;
+}
+
+.meta-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #3e3647;
+  margin-bottom: 4px;
+}
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.meta a {
+  color: #b13a2a;
+  text-decoration: none;
+}
+
+.meta a:hover {
+  text-decoration: underline;
+}
