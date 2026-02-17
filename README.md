@@ -11,6 +11,12 @@
   <a href="https://github.com/numb95/NoShort/releases">
     <img src="https://img.shields.io/github/v/release/numb95/noshorts?style=for-the-badge" alt="release" />
   </a>
+  <a href="https://chromewebstore.google.com/detail/noshorts/pbcfeekfnkddcpjmlnelbghfemlnehhl?authuser=0&hl=en">
+    <img src="https://img.shields.io/badge/Chrome%20Web%20Store-Install?style=for-the-badge&logo=googlechrome&logoColor=white" alt="chrome web store" />
+  </a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/say-no-to-shorts/">
+    <img src="https://img.shields.io/badge/Firefox%20Add--ons-Install?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="firefox add-ons" />
+  </a>
   <img src="https://img.shields.io/github/downloads/numb95/noshorts/total?style=for-the-badge" alt="downloads" />
   <img src="https://img.shields.io/github/last-commit/numb95/noshorts?style=for-the-badge" alt="last commit" />
   <img src="https://img.shields.io/github/release-date/numb95/noshorts?style=for-the-badge" alt="release date" />
@@ -57,10 +63,18 @@ The extension injects a content script into `www.youtube.com` and `m.youtube.com
 
 ## Install
 ### Chrome Web Store
-Coming soon.
+NoShorts on the Chrome Web Store:
+
+<a href="https://chromewebstore.google.com/detail/noshorts/pbcfeekfnkddcpjmlnelbghfemlnehhl">
+  <img src="https://developer.chrome.com/static/docs/webstore/branding/image/mPGKYBIR2uCP0ApchDXE.png" alt="Available in the Chrome Web Store" height="60" />
+</a>
 
 ### Firefox Add-ons
-Coming soon.
+NoShorts on Firefox Add-ons(Called Say No To Shorts):
+
+<a href="https://addons.mozilla.org/en-US/firefox/addon/say-no-to-shorts/">
+  <img src="https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png" alt="Get the Add-on for Firefox" height="60" />
+</a>
 
 ### Manual Install (Releases)
 1. Download the latest release from GitHub Releases.
